@@ -1,0 +1,59 @@
+.titulos {
+
+    font-family: sans-serif;
+    text-align: center;
+
+}
+
+.formulario {
+
+    max-width: 90%;
+
+}
+
+.texto-formulario {
+
+    font-size: 12px;
+    margin-top: 10%;
+}
+
+.estilo-fondo{
+
+    display: inline-block;
+    max-width: 70%;
+    margin: 0;
+    background-color:yellow;
+    border-radius: 9px;
+    padding: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+
+
+
+}
+
+
+header {
+    text-align: center;
+
+}
+
+body{
+
+    background-color: orangered;
+}
+
+.centrar {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.estilo-boton{
+
+    margin-top: 10px;
+
+}
+
+
+
