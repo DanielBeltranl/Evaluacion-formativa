@@ -1,33 +1,67 @@
-const input = document.querySelectorAll('input');
-const btn_registro = document.getElementById('btn_registro');
+import {Usuario} from "./Usuario.js";
+
+//funcion para guardar los dusuarios
+export function guardar (inputs) {
+
+    const user = new Usuario(inputs[0].value,
+        inputs[1].value,
+        inputs[2].value,
+        inputs[3].value,
+        inputs[4].value,
+        inputs[5].value,
+        inputs[6].value);
+
+    return user;
+
+}
 
 
-btn_registro.addEventListener('click', function (){
+//Funcion para validar que los campos no esten vacios
 
-    camposVAcios = false;
+export function validarCampos(event, inputs, arrayUsers) {
 
-    input.forEach( input => {
+    let estaVacio = false;
+
+    inputs.forEach(input => {
+
         if (input.value.trim() === '') {
+
             input.style.border = '2px solid red';
-            camposVacios = true;
+
+             estaVacio = true;
+
         }else{
+
             input.style.border = '';
         }
+
     })
 
-    if (camposVacios){
+    if (estaVacio) {
 
-        event.defaultPrevented();
+        event.preventDefault();
+    }else{
+
+       const user =  guardar(inputs)
+
+        arrayUsers.push(user)
+
+        console.log(arrayUsers);
+
     }
 
 
 
-});
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
-    form.addEventListener('submit', validarCampos);
-});
+
+
+
+
+
+
+
+
 
 
 
