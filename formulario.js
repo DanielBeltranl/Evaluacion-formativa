@@ -1,12 +1,33 @@
+const input = document.querySelectorAll('input');
+const btn_registro = document.getElementById('btn_registro');
 
 
-function nombre (){
+btn_registro.addEventListener('click', function (){
 
-    let nombre = document.getElementById("nombre").value;
+    camposVAcios = false;
 
-    if(nombre==""){
+    input.forEach( input => {
+        if (input.value.trim() === '') {
+            input.style.border = '2px solid red';
+            camposVacios = true;
+        }else{
+            input.style.border = '';
+        }
+    })
 
-        console.log("Nombre vacio");
+    if (camposVacios){
+
+        event.defaultPrevented();
     }
 
-}
+
+
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', validarCampos);
+});
+
+
+
